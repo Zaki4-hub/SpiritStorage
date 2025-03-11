@@ -11,8 +11,9 @@ namespace SojaExiles
 		public Animator openandclose;
 		public bool open;
 		public Transform Player;
+		public GameObject triggeringObject;
 
-		void Start()
+        void Start()
 		{
 			open = false;
 		}
@@ -50,8 +51,15 @@ namespace SojaExiles
 			}
 
 		}
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == triggeringObject)
+            {
+                StartCoroutine(opening());
+            }
+        }
 
-		IEnumerator opening()
+        IEnumerator opening()
 		{
 			print("you are opening the door");
 			openandclose.Play("Opening");
