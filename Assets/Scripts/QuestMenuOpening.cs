@@ -14,7 +14,7 @@ public class QuestMenuOpening : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.F))
         {
         QuestMenu.SetActive(!QuestMenu.activeInHierarchy);
         }
